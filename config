@@ -1,0 +1,6 @@
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaazb5j4eymkqje3szvfybjucnhcubmt7xgky2y5mm3vtkhsep6n4va
+fingerprint=26:19:63:70:f2:82:f4:2a:f7:23:ad:56:75:db:6b:59
+tenancy=ocid1.tenancy.oc1..aaaaaaaaujg4riyriyx7xbogu3do54wuzf2vpq77lsgvt4moi4ihhnybosqa
+region=ap-mumbai-1
+key_file=ziai35980@gmail.com_2023-04-04T11_50_56.453Z.pem
