@@ -5,8 +5,8 @@ imageId = "ocid1.image.oc1.ap-mumbai-1.aaaaaaaaxwmwy3qwg4qm3nt6vkgxm6w64augvnxzg
 subnetId = 'ocid1.subnet.oc1.ap-mumbai-1.aaaaaaaaahxrifkp6j57ey6q2arfxzagusgplzvoqvxponl57lwfpkw6upba'
 ssh_authorized_keys = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCxAUkCE96H6qYu+srzqfyxuQYcRWCAFzrrh8sjjR3GVtEcL/hkYoosOvI9Liqy7qhsu4SlR6Dvzn3GPRqx2bpzVY30mx+Zm/1WRypdHGM74JxzpGEg28dLuuOoPPOuk2a0AboXVD320S+s4+SHGgCrFO3+uLavD9C0oYGqENEy96d+s0S0fP6TzxjR7czUzhCP/Ihw7J/6qdCbFLKMTGfqWh1XcXe0wLe4YcAgEA5WGdCaByI2Mqe7ilGFyb8Djq1jAMjEprvQjG1b+hYo0j9BxZNGr3ckSGCIuwnYG+4zEuFbWJt/4m8yDGBOtdslc4ABfErvL/AuchF5Nlh3XsJl rsa-key-20230404"
 
-ocpus = 4
-memory_in_gbs = 24
+ocpus = 16
+memory_in_gbs = 96
 wait_s_for_retry = 15
 
 import oci
@@ -93,7 +93,7 @@ while True:
     shape='VM.Standard.A1.Flex',
     compartment_id=compartmentId,
     display_name=displayName,
-    source_details=oci.core.models.InstanceSourceViaBootVolumeDetails(source_type="bootVolume", boot_volume_id=imageId),
+    source_details=oci.core.models.InstanceSourceViaBootVolumeDetails(source_type="bootVolume", boot_volume_id=imageId, boot_volume_size_in_gbs=65),
     create_vnic_details=oci.core.models.CreateVnicDetails(
         assign_public_ip=False, subnet_id=subnetId, assign_private_dns_record=True),
     agent_config=oci.core.models.LaunchInstanceAgentConfigDetails(
